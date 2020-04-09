@@ -28,3 +28,14 @@ const shortenUrl = async () => {
         console.log(error);
     }
 }
+
+// Clear page and call AJAX functions
+const displayShortUrl = (event) => {
+    event.preventDefault();
+    while(responseField.firstChild){
+      responseField.removeChild(responseField.firstChild);
+    }
+    shortenUrl();
+  }
+  
+  shortenButton.addEventListener('click', displayShortUrl);
