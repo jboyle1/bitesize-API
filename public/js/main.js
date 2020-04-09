@@ -1,4 +1,4 @@
-// Information needed to reach the API
+// information to reach API
 const apiKey = '548af96918134a059652040c9d8071d6';
 const url = 'https://api.rebrandly.com/v1/links';
 
@@ -13,7 +13,7 @@ const shortenUrl = async () => {
     const data = JSON.stringify({destination: urlToShorten});
     try {
         const response = await fetch(url, {
-            method: "POST",
+            method: 'POST',
             body: data,
             headers: {
                 'Content-type': 'application/json',
@@ -32,10 +32,10 @@ const shortenUrl = async () => {
 // Clear page and call AJAX functions
 const displayShortUrl = (event) => {
     event.preventDefault();
-    while(responseField.firstChild){
-      responseField.removeChild(responseField.firstChild);
+    while (responseField.firstChild) {
+        responseField.removeChild(responseField.firstChild);
     }
     shortenUrl();
-  }
-  
-  shortenButton.addEventListener('click', displayShortUrl);
+}
+
+shortenButton.addEventListener('click', displayShortUrl);
